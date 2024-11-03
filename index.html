@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASIMOV</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="icon" href="Logo.jpg">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="navbar">
+    <div class="logo-circle">
+        <img src="Logo.jpg">
+    </div>
+    <div class="navbar-text">ASIMOV</div>
+</div>
+
+<div class="slideshow-container">
+    <div class="slide">
+        <img src="https://plus.unsplash.com/premium_photo-1664005877535-04a03117108d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmxhY2slMjBjYW55b258ZW58MHx8MHx8fDA%3D" alt="Slide 1">
+    </div>
+    <div class="slide">
+        <img src="https://images.unsplash.com/photo-1601180474209-ff5d83eee745?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmxhY2slMjBjYW55b258ZW58MHx8MHx8fDA%3D" alt="Slide 2">
+    </div>
+    <div class="slide"> 
+        <img src="https://images.unsplash.com/photo-1546054008-313e928b009b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YmxhY2slMjBjYW55b258ZW58MHx8MHx8fDA%3D" alt="Slide 3">
+    </div>
+    
+    <a class="prev" onclick="changeSlide(-1)"><i class="fa-solid fa-chevron-left"></i></a>
+    <a class="next" onclick="changeSlide(1)"><i class="fa-solid fa-chevron-right"></i></a>
+</div>
+
+<section class="intro" id="intro">
+    <div class="intro-text">
+        <h2 class="headings">INTRODUCTION</h2>
+        <h3>We are Team ASIMOV, <span class="highlight-main">Autonomous Site Identification Mapping and Observation Vehicle</span></h3>
+        <p>“We are a group of 10 undergraduate students of SRM Institute of Science and Technology, Kattankulathur. Our group is devided into 5 domains namely <span class="highlight">Mechanical, Electrical, Life Sciences, Coding and Corporate.</span> We are undertaking an ambitious project to develop an <span class="highlight">advanced vehicle capable of mapping the Black Canyon's terrain.</span> Our objective is to identify optimal locations for soil and gas sample collection and conduct comprehensive rock analyses to <span class="highlight">categorize the geological diversity within the canyon.</span> Upon completing the mapping and sampling, the vehicle will autonomously navigate to a pre-designated drop-off site to deposit the collected soil samples for further analysis. This project aims to <span class="highlight">deepen our understanding of the Black Canyon's geological landscape</span> through precise, systematic exploration and sampling.”</p>
+    </div>
+    <div class="profile-pic"></div>
+</section>
+<br>
+<hr>
+<br>
+
+<section class="gallery" id="gal">
+    <h2 class="headings">GALLERY</h2>
+    <div class="gallery-grid">   
+        <div class="gallery-box"><img src="Vehicle1.jpg" onclick="openModal(this.src)"></div>
+        <div class="gallery-box"><img src="Vehicle3.jpg" onclick="openModal(this.src)"></div>
+        <div class="gallery-box"><img src="Vehicle2.jpg" onclick="openModal(this.src)"></div>
+        <div class="gallery-box"></div>
+        <div class="gallery-box"></div>
+        <div class="gallery-box"></div>
+        <div class="gallery-box"></div>
+        <div class="gallery-box"></div>
+    </div> 
+</section>
+
+<div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImage">
+</div>
+<br>
+<hr>
+<br>
+
+<section class="about" id="ab">
+    <div class="bio">
+        <h2 class="headings">ABOUT</h2>
+        <p>“Our mission is divided into three segments. For the 1<sup>st</sup> segment, our <span class="highlight">vehicle maps the entire area</span> of the Black Canyon region and sends all the data to the base station. We, at the base station, we then <span class="highlight">select a site suitable for sample collection and send the coordinated to the vehicle.</span> For the 2<sup>nd</sup> segment, our vehicle follows the <span class="highlight">most ideal path</span> to reach the chosen coordinates and starts digging to <span class="highlight">collect soil and gas samples</span>. The samples are stored in a sterile container. <span class="highlight">Rock analysis</span> is also performed at this stage. As a part of the 3<sup>rd</sup> segment, our vehicle moves to another site whose coordinates had been provided to the vehicle prior to the start of the 1<sup>st</sup> segment. Once it reaches the end point, <span class="highlight">it dumps out the collected sample</span> for further testings and analysis.”</p>
+
+        <p class="toggle-text" onclick="toggleInfo()">Click here for more information about our vehicle</p>
+
+        <ul class="about" id="infoList" style="display: none;">
+            <li>To traverse smoothly along the rocky terrain without damaging the vehicle, <span class="highlight">Traction wheels</span> has been implemented to  minimize slipping along with a <span class="highlight">Rocker-Bogie</span> suspension system that will allow the vehicle to navigate challenging, rocky terrain with stability and ease.</li>
+            <li>To detect suitable soil for testing, During terrain mapping, the <span class="highlight">IR sensor</span> pinpoints anomalous temperature regions that may suggest underlying geological features. It enables the vehicle to detect hot spots or cool areas, which might hint at <span class="highlight">subsurface activity, water content, or specific minerals worth investigating.</span></li>
+            <li>With the help of <span class="highlight">Webcams and IMU set-up </span>on the vehicle, Visual features (like corners or edges) are extracted from the camera images to identify key landmarks in the environment. Using this data along with the <span class="highlight">fused visual and inertial data gathered by the algorithms</span>, the system continuously estimates the camera's position and orientation, it then builds a 3D map of the environment.</li>
+            <li>Once the site for soil collection has been detected, <span class="highlight">the auger, surrounded by the casing </span>is tasked to drill into the site. As it drills, the soil moves up the auger using the ridges and gets collected in the casing to ensure the soil doesn't fall off while rotating.</li>
+            <li>After detecting suitable site for rock analysis, the <span class="highlight">microscope is used to inspect the rock surface directly, identifying minerals, fossil-like structures, or textures</span> that could reveal the rock's history or potential biological activity. The <span class="highlight">moisture sensor measures the moisture content</span> in the soil, which is critical for evaluating past water activity or hydrated minerals.</li>
+            <li>Once the soil is collected to avoid contamination the casing serves as an <span class="highlight">opaque, sterile, and airtight container</span> to safeguard soil samples from air and light exposure. <span class="highlight">Rubber sleeves and flaps </span>provide an additional barrier, making it airtight, ensuring no interaction with the external environment post-collection.</li>
+            <li>We're using a <span class="highlight">lead screw to lower the auger, with a coupler</span> allowing easy detachment of both the auger and casing for flexibility and compactness. Additionally, we're using <span class="highlight">Steel supports</span> with weight reduction and an acrylic chassis to lower weight while maintaining rigidity and strength.</li>
+        </ul>
+    </div>
+</section>
+<br>
+
+<footer class="footer" id="foot">
+    <div class="footer-content">
+        <div class="contact-info">
+            <h3>Contact Us</h3>
+            <ul>
+                <li>Lakshita Sreenivas- lakshita2979ad@gmail.com</li>
+                <li>Rishika Majumder- hiiamrishika@gmail.com</li>
+                <li>Snehal Gupta- snehalgupta18@gmail.com</li>
+            </ul>
+        </div>
+        <div class="address">
+            <h3>Our Address</h3>
+            <p>SRMIST, Kattankulatur, Chennai- 603203</p>
+        </div>
+    </div>
+    <a href="https://www.instagram.com/team_.asimov?igsh=bDVrMHl4OG04eXc1" target="_blank">
+        <div class="social">
+            <div><i class="fa-brands fa-instagram"></i></div>
+            <div>Instagram</div>
+        </div>
+    </a>    
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
+
